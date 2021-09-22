@@ -115,6 +115,10 @@ class _HomePageState extends State<HomePage> {
                   onPressed: this.setValue,
                   child: Text('Set value'),
                 ),
+                ElevatedButton(
+                  onPressed: this.tambahList,
+                  child: Text('Tambah list'),
+                ),
               ],
             ),
           ],
@@ -144,9 +148,17 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  setValue(){
+  setValue() {
     setState(() {
       this.selectedProduct = 1;
+    });
+  }
+
+  tambahList() {
+    S2Choice<int> last = this.list.last;
+    setState(() {
+      this.list.add(S2Choice<int>(
+          value: (last.value + 1), title: 'Tambahan ${last.value + 1}'));
     });
   }
 }

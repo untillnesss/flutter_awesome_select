@@ -1613,7 +1613,8 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
     initializeFilter();
 
     // initial load the choice items
-    choices!.initialize();
+    // choices!.initialize();
+    choices!.reload();
 
     // show modal by type and return confirmed value
     final bool confirmed = await _showModalByType() ?? false;

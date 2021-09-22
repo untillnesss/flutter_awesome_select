@@ -105,6 +105,7 @@ class S2Choices<T> extends ChangeNotifier {
 
   /// Function to load choice items
   void load(S2ChoicesTask _task, {String? query}) async {
+    notifyListeners();
     // skip the loader if the status busy
     if (isBusy) return null;
 

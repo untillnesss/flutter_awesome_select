@@ -83,6 +83,8 @@ class S2ModalHeaderStyle with Diagnosticable {
   /// used by title and search field
   final TextStyle? textStyle;
 
+  final TextStyle? hintStyle;
+
   /// Error text style
   final TextStyle? errorStyle;
 
@@ -99,6 +101,7 @@ class S2ModalHeaderStyle with Diagnosticable {
     this.useLeading,
     this.centerTitle = false,
     this.textStyle,
+    this.hintStyle,
     this.errorStyle,
     this.iconTheme,
     this.actionsIconTheme,
@@ -116,6 +119,7 @@ class S2ModalHeaderStyle with Diagnosticable {
     bool? useLeading,
     bool? centerTitle,
     TextStyle? textStyle,
+    TextStyle? hintStyle,
     TextStyle? errorStyle,
     IconThemeData? iconTheme,
     IconThemeData? actionsIconTheme,
@@ -128,6 +132,7 @@ class S2ModalHeaderStyle with Diagnosticable {
       useLeading: useLeading ?? this.useLeading,
       centerTitle: centerTitle ?? this.centerTitle,
       textStyle: this.textStyle?.merge(textStyle) ?? textStyle,
+      hintStyle: this.hintStyle?.merge(hintStyle) ?? hintStyle,
       errorStyle: this.errorStyle?.merge(errorStyle) ?? errorStyle,
       iconTheme: this.iconTheme?.merge(iconTheme) ?? iconTheme,
       actionsIconTheme:
@@ -149,6 +154,7 @@ class S2ModalHeaderStyle with Diagnosticable {
       useLeading: other.useLeading,
       centerTitle: other.centerTitle,
       textStyle: other.textStyle,
+      hintStyle: other.hintStyle,
       errorStyle: other.errorStyle,
       iconTheme: other.iconTheme,
       actionsIconTheme: other.actionsIconTheme,

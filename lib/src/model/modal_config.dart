@@ -79,6 +79,8 @@ class S2ModalConfig with Diagnosticable {
   /// Configure modal header style
   final S2ModalHeaderStyle headerStyle;
 
+  final TextStyle? hintStyle;
+
   /// Create modal configuration
   const S2ModalConfig({
     this.type = S2ModalType.fullPage,
@@ -100,6 +102,7 @@ class S2ModalConfig with Diagnosticable {
     this.barrierColor,
     this.style = const S2ModalStyle(),
     this.headerStyle = const S2ModalHeaderStyle(),
+    this.hintStyle,
   }) : assert(maxHeightFactor > 0 && maxHeightFactor <= 1);
 
   /// Returns true if the modal type is full page

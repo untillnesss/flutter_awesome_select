@@ -24,7 +24,6 @@ class HondaSelectOutline<T> extends StatefulWidget {
 }
 
 class _HondaSelectOutlineState<T> extends State<HondaSelectOutline<T>> {
-
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -43,6 +42,13 @@ class _HondaSelectOutlineState<T> extends State<HondaSelectOutline<T>> {
           onChange: (state) => this.widget.onChange(state, state.value),
           modalFilter: true,
           modalFilterAuto: true,
+          modalConfig: S2ModalConfig(
+            headerStyle: S2ModalHeaderStyle(
+              hintStyle: TextStyle(
+                color: Colors.red,
+              ),
+            ),
+          ),
           modalHeaderStyle: S2ModalHeaderStyle(
             backgroundColor: Colors.white,
             actionsIconTheme: IconThemeData(color: Colors.red),

@@ -860,6 +860,8 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
   /// State of the filter operation
   S2Filter? filter;
 
+  TextStyle? hintStyle;
+
   /// Context of the modal
   late BuildContext modalContext;
 
@@ -975,6 +977,7 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
         textStyle: widget.modalConfig.isFullPage != true
             ? theme.textTheme.headline6
             : theme.primaryTextTheme.headline6,
+        hintStyle: widget.modalConfig.hintStyle,
         iconTheme:
             widget.modalConfig.isFullPage != true ? theme.iconTheme : null,
         errorStyle: TextStyle(
@@ -1119,7 +1122,7 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
       textInputAction: TextInputAction.search,
       decoration: InputDecoration.collapsed(
         hintText: modalConfig.filterHint ?? 'Search on $title',
-        hintStyle: modalHeaderStyle.textStyle,
+        hintStyle: modalHeaderStyle.hintStyle,
       ),
       textAlign: modalConfig.headerStyle.centerTitle == true
           ? TextAlign.center
